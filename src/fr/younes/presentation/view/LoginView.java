@@ -102,7 +102,7 @@ public class LoginView {
 		panel.add(panel_4);
 		panel_4.setLayout(null);
 		
-		btnNewButton = new JButton("LOGIN");
+		btnNewButton = new JButton("LOGIN :");
 		btnNewButton.setBounds(10, 11, 112, 41);
 		panel_4.add(btnNewButton);
 		
