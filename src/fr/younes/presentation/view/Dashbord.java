@@ -1,23 +1,26 @@
 package fr.younes.presentation.view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.Color;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.JSeparator;
-import javax.swing.JTextField;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+
+import javafx.scene.layout.Border;
 
 public class Dashbord {
 
@@ -59,6 +62,9 @@ public class Dashbord {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		JButton btnNewButton = new JButton("");
+
+		javax.swing.border.Border emptyBorder = BorderFactory.createEmptyBorder();
+		btnNewButton.setBorder(emptyBorder);
 		btnNewButton.setSelectedIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64 (2).png"));
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		btnNewButton.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64.png"));
@@ -116,6 +122,7 @@ public class Dashbord {
 		pnlMenu.setLayout(null);
 		
 		JButton btnNewButton_1 = new JButton("Dashbord");
+		btnNewButton_1.setBorder(emptyBorder);
 		btnNewButton_1.setForeground(new Color(192, 192, 192));
 		btnNewButton_1.setBackground(new Color(128, 128, 128));
 		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-home-32.png"));
@@ -126,6 +133,7 @@ public class Dashbord {
 		pnlMenu.add(btnNewButton_1);
 		
 		JButton btnNews = new JButton("News");
+		btnNews.setBorder(emptyBorder);
 		btnNews.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-news-32 (2).png"));
 		btnNews.setForeground(Color.LIGHT_GRAY);
 		btnNews.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -135,6 +143,7 @@ public class Dashbord {
 		pnlMenu.add(btnNews);
 		
 		JButton button = new JButton("Dashbord");
+		button.setBorder(emptyBorder);
 		button.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-ratings-32.png"));
 		button.setForeground(Color.LIGHT_GRAY);
 		button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -144,6 +153,7 @@ public class Dashbord {
 		pnlMenu.add(button);
 		
 		JButton button_1 = new JButton("Dashbord");
+		button_1.setBorder(emptyBorder);
 		button_1.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-ask-question-32.png"));
 		button_1.setForeground(Color.LIGHT_GRAY);
 		button_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
