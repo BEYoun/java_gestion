@@ -13,14 +13,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
-
-import javafx.scene.layout.Border;
+import javax.swing.JMenuBar;
+import java.awt.Insets;
 
 public class Dashbord {
 
@@ -61,33 +63,41 @@ public class Dashbord {
 		frame.setBounds(100, 100, 995, 570);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		JButton btnNewButton = new JButton("");
 
 		javax.swing.border.Border emptyBorder = BorderFactory.createEmptyBorder();
-		btnNewButton.setBorder(emptyBorder);
-		btnNewButton.setSelectedIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64 (2).png"));
-		btnNewButton.setForeground(Color.DARK_GRAY);
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64.png"));
-		btnNewButton.setBounds(10, 11, 41, 38);
-		btnNewButton.setContentAreaFilled(false);
-		frame.getContentPane().add(btnNewButton);
 		JSeparator separator = new JSeparator();
-		separator.setBounds(80, 46, 193, 21);
+		separator.setBounds(75, 46, 193, 31);
 		frame.getContentPane().add(separator);
 
 		frame.setUndecorated(true);
 		frame.setBackground(new Color(0,0,0,0));
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setMargin(new Insets(20, 0, 0, 0));
+		menuBar.setBackground(Color.DARK_GRAY);
+		menuBar.setBounds(0, 6, 73, 72);
+		frame.getContentPane().add(menuBar);
+		
+		JMenu menu = new JMenu("");
+		menuBar.add(menu);
+		
+		JMenuItem mntmHello = new JMenuItem("hello");
+		menu.add(mntmHello);
+		JMenuItem mnuNewFile = new JMenuItem( "New File" );
+		menu.add(mnuNewFile);
+		menu.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64.png"));
+		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-search-32.png"));
 		lblNewLabel_3.setOpaque(false);
-		lblNewLabel_3.setBounds(240, 25, 32, 23);
+		lblNewLabel_3.setBounds(235, 25, 32, 23);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		txtSearch = new JTextField();
 		txtSearch.setForeground(new Color(0, 0, 0));
 		txtSearch.setBackground(new Color(169, 169, 169));
 		txtSearch.setToolTipText("");
-		txtSearch.setBounds(80, 26, 165, 21);
+		txtSearch.setBounds(75, 26, 165, 21);
 		frame.getContentPane().add(txtSearch);
 		txtSearch.setColumns(10);
 		
@@ -182,6 +192,6 @@ public class Dashbord {
 		lblBackground.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\Background2.png"));
 		lblBackground.setBounds(0, 0, 1012, 612);
 		frame.getContentPane().add(lblBackground);
-		frame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{btnNewButton, separator, lblNewLabel_3, txtSearch, lblNewLabel, lblYouAreLogin, lblLogOut, pnlMenu, btnNewButton_1, btnNews, button, button_1, lblBackground}));
+		frame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{separator, lblNewLabel_3, txtSearch, lblNewLabel, lblYouAreLogin, lblLogOut, pnlMenu, btnNewButton_1, btnNews, button, button_1, lblBackground}));
 	}
 }
