@@ -98,7 +98,7 @@ public class Dashbord {
 		});
 		panel_1.setLayout(null);
 		panel_1.add(btnNewButton_2);
-		ImageIcon icon = new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\document_add_256_icon-icons.com_75994.png");
+		ImageIcon icon = new ImageIcon("img/document_add_256_icon-icons.com_75994.png");
 		 Image img = icon.getImage() ;  
 		   Image newimg = img.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
 		   icon = new ImageIcon( newimg );
@@ -115,7 +115,7 @@ public class Dashbord {
 		btnNewButton_3.setBorder(emptyBorder);
 		btnNewButton_3.setForeground(Color.WHITE);
 		btnNewButton_3.setBackground(new Color(105, 105, 105));
-		ImageIcon icon2 = new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\Edit-validated-icon.png");
+		ImageIcon icon2 = new ImageIcon("img/Edit-validated-icon.png");
 		Image img2 = icon2.getImage() ;  
 		Image newimg2 = img2.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
 		icon2 = new ImageIcon( newimg2 );
@@ -148,10 +148,10 @@ public class Dashbord {
 		menu.add(mntmHello);
 		JMenuItem mnuNewFile = new JMenuItem( "Chef administratif" );
 		menu.add(mnuNewFile);
-		menu.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64.png"));
+		menu.setIcon(new ImageIcon("img/icons8-menu-64.png"));
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-search-32.png"));
+		lblNewLabel_3.setIcon(new ImageIcon("img/icons8-search-32.png"));
 		lblNewLabel_3.setOpaque(false);
 		lblNewLabel_3.setBounds(235, 25, 32, 23);
 		frame.getContentPane().add(lblNewLabel_3);
@@ -198,7 +198,7 @@ public class Dashbord {
 		btnNewButton_1.setBorder(emptyBorder);
 		btnNewButton_1.setForeground(new Color(192, 192, 192));
 		btnNewButton_1.setBackground(new Color(128, 128, 128));
-		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-home-32.png"));
+		btnNewButton_1.setIcon(new ImageIcon("img/icons8-home-32.png"));
 		btnNewButton_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(84, 0, 136, 51);
 
@@ -207,7 +207,7 @@ public class Dashbord {
 		
 		JButton btnNews = new JButton("News");
 		btnNews.setBorder(emptyBorder);
-		btnNews.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-news-32 (2).png"));
+		btnNews.setIcon(new ImageIcon("img/icons8-news-32 (2).png"));
 		btnNews.setForeground(Color.LIGHT_GRAY);
 		btnNews.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		btnNews.setContentAreaFilled(false);
@@ -217,7 +217,7 @@ public class Dashbord {
 		
 		JButton button = new JButton("Dashbord");
 		button.setBorder(emptyBorder);
-		button.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-ratings-32.png"));
+		button.setIcon(new ImageIcon("img/icons8-ratings-32.png"));
 		button.setForeground(Color.LIGHT_GRAY);
 		button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		button.setContentAreaFilled(false);
@@ -227,7 +227,7 @@ public class Dashbord {
 		
 		JButton button_1 = new JButton("Dashbord");
 		button_1.setBorder(emptyBorder);
-		button_1.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-ask-question-32.png"));
+		button_1.setIcon(new ImageIcon("img/icons8-ask-question-32.png"));
 		button_1.setForeground(Color.LIGHT_GRAY);
 		button_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		button_1.setContentAreaFilled(false);
@@ -252,7 +252,7 @@ public class Dashbord {
 			}
 		});
 		lblBackground.setHorizontalAlignment(SwingConstants.LEFT);
-		lblBackground.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\Background2.png"));
+		lblBackground.setIcon(new ImageIcon("img/Background2.png"));
 		lblBackground.setBounds(0, 0, 1012, 612);
 		frame.getContentPane().add(lblBackground);
 		frame.getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{separator, lblNewLabel_3, txtSearch, lblNewLabel, lblYouAreLogin, lblLogOut, pnlMenu, btnNewButton_1, btnNews, button, button_1, lblBackground}));
