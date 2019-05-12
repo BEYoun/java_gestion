@@ -27,12 +27,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
+
+import fr.younes.utile.TreeDragDemo;
+
 import javax.swing.UIManager;
 import java.awt.SystemColor;
+import java.awt.FlowLayout;
 
-public class Dashbord {
+public class Dashbord2 {
 
-	public JFrame frame;
+	private JFrame frame;
 	private JTextField txtSearch;
 	int xMouse;
 	int yMouse;
@@ -44,7 +48,7 @@ public class Dashbord {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Dashbord window = new Dashbord();
+					Dashbord2 window = new Dashbord2();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,7 +60,7 @@ public class Dashbord {
 	/**
 	 * Create the application.
 	 */
-	public Dashbord() {
+	public Dashbord2() {
 		initialize();
 		
 	}
@@ -77,59 +81,14 @@ public class Dashbord {
 
 		frame.setUndecorated(true);
 		frame.setBackground(new Color(0,0,0,0));
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(88, 168, 800, 340);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new GridLayout(2, 2, 0, 0));
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.DARK_GRAY);
-		panel.add(panel_1);
-		
-		JButton btnNewButton_2 = new JButton("Ajout");
-		btnNewButton_2.setForeground(Color.WHITE);
-		btnNewButton_2.setBackground(new Color(105, 105, 105));
-		btnNewButton_2.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		btnNewButton_2.setBounds(0, 0, 417, 199);
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		panel_1.setLayout(null);
-		panel_1.add(btnNewButton_2);
 		ImageIcon icon = new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\document_add_256_icon-icons.com_75994.png");
 		 Image img = icon.getImage() ;  
 		   Image newimg = img.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
 		   icon = new ImageIcon( newimg );
-		   btnNewButton_2.setBorder(emptyBorder);
-		   
-		btnNewButton_2.setIcon(icon);
-		
-		JPanel panel_2 = new JPanel();
-		panel.add(panel_2);
-		panel_2.setLayout(null);
-		
-		JButton btnNewButton_3 = new JButton("Modifier");
-		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		btnNewButton_3.setBorder(emptyBorder);
-		btnNewButton_3.setForeground(Color.WHITE);
-		btnNewButton_3.setBackground(new Color(105, 105, 105));
 		ImageIcon icon2 = new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\Edit-validated-icon.png");
 		Image img2 = icon2.getImage() ;  
 		Image newimg2 = img2.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
 		icon2 = new ImageIcon( newimg2 );
-		btnNewButton_3.setIcon(icon2);
-		btnNewButton_3.setBounds(-17, 0, 417, 204);
-		panel_2.add(btnNewButton_3);
-		
-		JButton btnNewButton = new JButton("Archiver");
-		btnNewButton.setBackground(new Color(105, 105, 105));
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_4 = new JButton("New button");
-		btnNewButton_4.setBackground(new Color(105, 105, 105));
-		panel.add(btnNewButton_4);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setMargin(new Insets(20, 0, 0, 0));
@@ -150,6 +109,13 @@ public class Dashbord {
 		menu.add(mnuNewFile);
 		menu.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-menu-64.png"));
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.DARK_GRAY);
+		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
+		new TreeDragDemo(panel);
+		panel.setBounds(96, 172, 806, 333);
+		frame.getContentPane().add(panel);
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\younesbe\\eclipse-workspace\\Peojet_gestion\\img\\icons8-search-32.png"));
 		lblNewLabel_3.setOpaque(false);

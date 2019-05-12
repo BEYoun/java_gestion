@@ -9,7 +9,7 @@ public class SdzConnection{
   /**
   * URL de connection
   */
-  private static String url = "jdbc:postgresql://localhost:5432/gestion";
+  private static String url = "jdbc:postgresql://localhost:5432/java_project";
 
   /**
   * Nom du user
