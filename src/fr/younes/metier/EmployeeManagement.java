@@ -5,10 +5,9 @@ import java.util.List;
 
 import fr.younes.connection.SdzConnection;
 import fr.younes.persistance.EmployeesDAO;
-import fr.younes.persistance.UserDAO;
 
 public class EmployeeManagement {
-	private Employee monArticle;
+	private Employee monEmployee;
 	private EmployeesDAO edao = new EmployeesDAO(SdzConnection.getInstance());
 	public EmployeeManagement() {
 	}
@@ -21,8 +20,8 @@ public class EmployeeManagement {
 		return edao.find(id);
 	}
 	
-	public boolean addUser(Employee user) {
-		return edao.create(user);
+	public void addUser(Employee user) {
+		edao.create(user);
 	}
 	
 	public boolean editUser(Employee user) {
@@ -34,6 +33,27 @@ public class EmployeeManagement {
 	}
 	public ArrayList<Employee> archiveEmploye() 
 	{	return edao.archiveEmploye();
+		
+	}
+
+	public List<Employee> getAll() {
+		// TODO Auto-generated method stub
+		return edao.listEmploye();
+	}
+
+	public List<Employee> getEmployeesOnly() {
+		// TODO Auto-generated method stub
+		return edao.listEmployeOnly();
+	}
+
+	public List<Employee> getChefOnly() {
+		// TODO Auto-generated method stub
+		return edao.listChefOnly();
+	}
+
+	public boolean addEmp(Employee e) {
+		// TODO Auto-generated method stub
+		return edao.create(e);
 		
 	}
 }

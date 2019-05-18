@@ -20,12 +20,17 @@ public class EmployeesDAO extends DAO<Employee>{
 	public List<Employee> listEmploye() {
 		List<Employee> maList=new ArrayList<Employee>();
 		Employee a;
-		String sql="SELECT * FROM users";
+		String sql="SELECT * FROM employes";
 		try {
 			PreparedStatement statement=this.connect.prepareStatement(sql);
 			ResultSet rs=statement.executeQuery();
 			while(rs.next()) {
-				a=new Employee(rs.getInt("id"),rs.getString("email"),rs.getString("password"),rs.getString("username"));
+				a=new Employee(rs.getInt("id"),
+						rs.getString("username"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getString("password"),
+						rs.getString("role"));
 				maList.add(a);
 			}
 		} catch (SQLException e) {
@@ -96,18 +101,13 @@ public class EmployeesDAO extends DAO<Employee>{
 
 	@Override
 	public boolean create(Employee obj) {
-		String sql="insert into  employes(username,password,role) "
-				+ "values (?,?,?)";
+		String sql="insert into employes(nom,prenom,username,password,role)"
+				+ " values ('"+obj.getNom()+"','"+obj.getPrenom()+"','"+obj.getUsername()+"','"+obj.getPassword()+"','"+obj.getRole()+"');";
 		try {
+			System.out.println(sql);
 			PreparedStatement statement=this.connect.prepareStatement(sql);
-			
-			
-			statement.setString(1, obj.getUsername());
-			statement.setString(2, obj.getPassword());
-			statement.setString(3, obj.getRole());
-			ResultSet rs=statement.executeQuery();
-			
-			return statement.executeUpdate() > 0;
+			statement.execute();
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
@@ -151,4 +151,52 @@ public class EmployeesDAO extends DAO<Employee>{
 		}
 		return user;
 	}
+
+	public List<Employee> listEmployeOnly() {
+		List<Employee> maList=new ArrayList<Employee>();
+		Employee a;
+		String sql="SELECT * FROM employes where role='employee'";
+		try {
+			PreparedStatement statement=this.connect.prepareStatement(sql);
+			ResultSet rs=statement.executeQuery();
+			while(rs.next()) {
+				a=new Employee(rs.getInt("id"),
+						rs.getString("username"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getString("password"),
+						rs.getString("role"));
+				maList.add(a);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return maList;
+	}
+	public List<Employee> listChefOnly() {
+		List<Employee> maList=new ArrayList<Employee>();
+		Employee a;
+		String sql="SELECT * FROM employes where role='chef'";
+		try {
+			PreparedStatement statement=this.connect.prepareStatement(sql);
+			ResultSet rs=statement.executeQuery();
+			while(rs.next()) {
+				a=new Employee(rs.getInt("id"),
+						rs.getString("username"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getString("password"),
+						rs.getString("role"));
+				maList.add(a);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return maList;
+	}
+
+
+	
 }

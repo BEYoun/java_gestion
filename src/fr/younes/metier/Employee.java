@@ -3,6 +3,8 @@ package fr.younes.metier;
 public class Employee {
 	private int id;
 	private String username;
+	private String nom;
+	private String prenom;
 	private String password;
 	private String role;
 
@@ -13,10 +15,54 @@ public class Employee {
 	
 	
 
-	public Employee(int id, String username, String password, String role) {
+	public String getNom() {
+		return nom;
+	}
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+
+
+	public Employee(int id, 
+			String username, 
+			String nom, 
+			String prenom,
+			String password, 
+			String role) {
 		super();
 		this.id = id;
 		this.username = username;
+		this.nom= nom;
+		this.prenom= prenom;
+		this.password = password;
+		this.role = role;
+	}
+	public Employee(
+			String username, 
+			String nom, 
+			String prenom,
+			String password, 
+			String role) {
+		super();
+		this.username = username;
+		this.nom= nom;
+		this.prenom= prenom;
 		this.password = password;
 		this.role = role;
 	}

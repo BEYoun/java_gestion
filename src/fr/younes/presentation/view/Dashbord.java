@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -27,6 +29,14 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import org.eclipse.wb.swing.FocusTraversalOnArray;
+
+import fr.younes.metier.Employee;
+import fr.younes.metier.User;
+import fr.younes.presentation.controller.EmployeesController;
+import fr.younes.presentation.controller.EtapesController;
+import fr.younes.presentation.controller.ProcessusController;
+import fr.younes.presentation.model.AbstractModel;
+
 import javax.swing.UIManager;
 import java.awt.SystemColor;
 
@@ -36,6 +46,13 @@ public class Dashbord {
 	private JTextField txtSearch;
 	int xMouse;
 	int yMouse;
+
+	AbstractModel amdl;
+	EmployeesController ectl=new EmployeesController(amdl);
+	ProcessusController pctl=new ProcessusController(amdl);
+	EtapesController etctl=new EtapesController(amdl);
+	ArrayList<Employee> employees;
+	ArrayList<Employee> chef;
 
 	/**
 	 * Launch the application.
@@ -88,6 +105,17 @@ public class Dashbord {
 		panel.add(panel_1);
 		
 		JButton btnNewButton_2 = new JButton("Ajout");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				Ajout_employee window2 = new Ajout_employee();
+				window2.frame.setVisible(true);
+				frame.setVisible(false);
+				
+					
+			}
+		});
 		btnNewButton_2.setForeground(Color.WHITE);
 		btnNewButton_2.setBackground(new Color(105, 105, 105));
 		btnNewButton_2.setFont(new Font("Segoe UI", Font.BOLD, 18));
@@ -99,10 +127,10 @@ public class Dashbord {
 		panel_1.setLayout(null);
 		panel_1.add(btnNewButton_2);
 		ImageIcon icon = new ImageIcon("img/document_add_256_icon-icons.com_75994.png");
-		 Image img = icon.getImage() ;  
-		   Image newimg = img.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
-		   icon = new ImageIcon( newimg );
-		   btnNewButton_2.setBorder(emptyBorder);
+		Image img = icon.getImage() ;  
+		Image newimg = img.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;  
+		icon = new ImageIcon( newimg );
+		btnNewButton_2.setBorder(emptyBorder);
 		   
 		btnNewButton_2.setIcon(icon);
 		
@@ -111,6 +139,15 @@ public class Dashbord {
 		panel_2.setLayout(null);
 		
 		JButton btnNewButton_3 = new JButton("Modifier");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Edit_employee dash = new Edit_employee();
+				dash.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
+		
+		
 		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		btnNewButton_3.setBorder(emptyBorder);
 		btnNewButton_3.setForeground(Color.WHITE);
@@ -141,15 +178,50 @@ public class Dashbord {
 		menuBar.add(menu);
 		
 		JMenuItem Employer = new JMenuItem("Employer");
+		Employer.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ectl.OpenDashbord(frame);
+			}
+		});
 		menu.add(Employer);
-		JMenuItem Chef = new JMenuItem( "Chef administratif" );
-		menu.add(Chef);
-		JMenuItem mntmHello = new JMenuItem("Employer");
+		JMenuItem mntmHello = new JMenuItem("Procedure");
+		mntmHello.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pctl.openDashbord(frame);
+			}
+		});
 		menu.add(mntmHello);
-		JMenuItem mnuNewFile = new JMenuItem( "Chef administratif" );
+		JMenuItem mnuNewFile = new JMenuItem( "Etape" );
+		mnuNewFile.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				etctl.openDashbord(frame);
+			}
+		});
 		menu.add(mnuNewFile);
+		JMenuItem menuAffectation = new JMenuItem( "Affectation" );
+		menuAffectation.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pctl.openAffectation(frame);
+			}
+		});
+		menu.add(menuAffectation);
 		menu.setIcon(new ImageIcon("img/icons8-menu-64.png"));
 		menu.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JLabel lblEmployer = new JLabel("Employer");
+		lblEmployer.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEmployer.setForeground(Color.WHITE);
+		lblEmployer.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblEmployer.setBounds(326, 134, 318, 31);
+		frame.getContentPane().add(lblEmployer);
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("img/icons8-search-32.png"));
 		lblNewLabel_3.setOpaque(false);
@@ -195,6 +267,7 @@ public class Dashbord {
 		pnlMenu.setLayout(null);
 		
 		JButton btnNewButton_1 = new JButton("Dashbord");
+		
 		btnNewButton_1.setBorder(emptyBorder);
 		btnNewButton_1.setForeground(new Color(192, 192, 192));
 		btnNewButton_1.setBackground(new Color(128, 128, 128));
